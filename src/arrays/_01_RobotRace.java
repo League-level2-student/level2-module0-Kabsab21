@@ -16,7 +16,7 @@ public static void main(String[] args) {
 	//3. use a for loop to initialize the robots.
  	for( int i = 0; i < robs.length; i++) {
  		robs[i] = new Robot();
- 		robs[i].setSpeed(10);
+ 		robs[i].setSpeed(100);
  		 robs[i].setX(50);
  		 robs[i].setY(50);
  		 robs[i].turn(90);
@@ -24,20 +24,33 @@ public static void main(String[] args) {
  		 robs[i].turn(90);
  		 
  		
- 		
- 		
- 
+ 			
+ 			}
+ 	boolean win = false;
+ 	while(!win) {
  	
- 	}
-		//4. make each robot start at the bottom of the screen, side by side, facing up
-for( int e = 0; e < robs.length; e++) {
-	
-	Random r = new Random();
-	int in = r.nextInt(50);
-	while( robs[e].getY()> 70) {
-	robs[e].move(in);
-	}
+ 	for( int i = 0; i < robs.length; i++) {
+ 
+			
+			Random r = new Random();
+			int in = r.nextInt(50);
+			
+			robs[i].move(in);
+			if( robs[i].getY() > 500) {
+				System.out.println("winn" + i);
+				win = true;
+			}
+			}
+		
+		}
 }
+ 		
+ 		
+}
+ 	
+ 	
+		//4. make each robot start at the bottom of the screen, side by side, facing up
+ 
 	//5. use another for loop to iterate through the array and make each robot move 
 	//   a random amount less than 50.
 
@@ -49,5 +62,5 @@ for( int e = 0; e < robs.length; e++) {
 
 	//9. make the robots race around a circular track.
 
-}
-}
+
+
