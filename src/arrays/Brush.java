@@ -56,12 +56,13 @@ public class Brush {
         // to keep bristle x/y positions up to date
         for (int i = 0; i < bristles.length; i++) {
             if (processing.mousePressed) {
-                bristles[i].draw();
             }
+            bristles[i].draw();
             
             // Must be placed after draw
             bristles[i].update();
         }
+     
     }
 
     public void setNewPainting(PImage newPainting) {
@@ -108,8 +109,8 @@ public class Brush {
 
                 // The bigger the distance, i.e. the faster the mouse is moved,
                 // the bigger and more coarse the line width
-                processing.strokeWeight((radius * dist) / 50);
-                processing.line(x + startX, y + startY, endX, endY);
+               processing.strokeWeight(4);
+               processing.line(x + startX, y + startY, endX, endY);
             }
         }
     }

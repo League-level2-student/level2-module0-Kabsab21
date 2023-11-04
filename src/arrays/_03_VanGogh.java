@@ -30,17 +30,17 @@ import processing.core.PImage;
  * 7. Run the program. You should be able to paint with your brush when
  *    pressing the mouse and dragging. The paint will be thicker the faster
  *    the mouse moves and more detailed when moving the mouse slowly.
- *    Press 'r' to remove all the paint from the canvas and start over.
+ *    Press 'r' to remove all the paint from the canvas and start over. --
  * 
  * 8. In the selectNextPainting() method, increase the image index variable
  *    by 1. Add code to make sure the index variable is never larger than the
- *    size of the painting array and wraps back to the first painting.
+ *    size of the painting array and wraps back to the first painting. --
  * 
- * 9. Call the setNewPainting() method from the brush object similar to step 6.
+ * 9. Call the setNewPainting() method from the brush object similar to step 6. --
  * 
  * 10.Run the program. Press the spacebar to move to the next painting.
  *    Make sure that pressing the spacebar on the fourth painting returns
- *    back to the first one.
+ *    back to the first one. --
  * 
  * 11.EXTRA: Find more paintings and add them to your code.
  *           Watercolor paintings work the best!
@@ -65,11 +65,16 @@ public class _03_VanGogh extends PApplet {
         image[1]=loadImage("strawHatPortrait.jpg");
         image[2]=loadImage("wheatField.jpg");
         image[3]=loadImage("painterOnRoad.jpg");
-        brush.setNewPainting(image[display]); 
+        brush.setNewPainting(image[display]);
+        
     }
     
     void selectNextPainting() {
-    	
+    	 display = display + 1;
+    	 if(display == image.length) {
+    		 display = 0;
+    	 }
+    	 brush.setNewPainting(image[display]);
     }
 
     @Override
@@ -77,6 +82,7 @@ public class _03_VanGogh extends PApplet {
         // Arbitrary initial size.
         // These values are changed when the first painting is loaded in setup().
         size(800, 600);
+       
     }
 
     @Override
